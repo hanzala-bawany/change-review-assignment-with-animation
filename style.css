@@ -8,14 +8,16 @@
     /* font-family: "Baloo Tamma 2", system-ui;                 baloo bhai*/
     font-family: "Poppins", sans-serif;
 }
-:root{
+
+:root {
     --themecolor: rgb(55, 0, 60);
-    --sideTheme : rgb(255, 229, 255);
+    --sideTheme: rgb(255, 229, 255);
 }
-body{
+
+body {
     /* background-color: rgb(231, 227, 227) !important;  */
     /* color: white !important; */
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 /*   Sectiion 1 Nav bar */
@@ -32,14 +34,23 @@ nav {
     position: fixed;
     /* position: relative; */
 }
-.dropdown{
+
+/* @media only screen and (min-width:715px){
+    
+    nav{
+        flex-direction:row-reverse;
+    }
+} */
+.dropdown {
     display: none;
     transform: translateX(50px);
 }
-.dropdown img{
+
+.dropdown img {
     width: 25px;
 }
-.dropdown button{
+
+.dropdown button {
     height: 25px;
     display: flex;
     justify-content: center;
@@ -100,52 +111,83 @@ nav ul li:nth-child(2) a {
     /* text-decoration: underline solid blue 2px; */
 }
 
-nav img{
-    width: 2.8%;
-    box-shadow: 1px 1px 4px 2px var(--themecolor);;
+nav .img {
+    width: 30px;
+    box-shadow: 2px 2px 3px 2px var(--themecolor);
+    
     background-color: var(--sideTheme);
 }
-nav img:hover{
-transform: scale(110%);
-cursor: pointer;
+
+nav .img:hover {
+    transform: scale(110%);
+    cursor: pointer;
 }
-@media only screen and (max-width:780px){
+
+nav .img:active {
+    box-shadow: 1px 1px 3px 2px var(--themecolor);
+    ;
+}
+
+@media only screen and (max-width:780px) {
     nav {
-       
+
         padding: 0px 30px;
-    }   
+    }
+
     nav .SHname {
         font-size: 22px;
         font-weight: 700;
     }
+
     nav ul {
         column-gap: 17px;
     }
+
     nav ul a {
         font-size: 14px;
         font-weight: 600;
     }
-    nav img{
-        width: 2.5%;
+
+    nav .img {
+
+        box-shadow: 1px 1px 3px 2px var(--themecolor);
+        width: 20px;
+    }
+    nav .img:hover {
+        transform: scale(110%);
+        box-shadow: 2px 2px 3px 2px var(--themecolor);
+        width: 20px;
     }
 
 }
-@media only screen and (max-width:680px){
-    nav {      
+
+@media only screen and (max-width:680px) {
+    nav {
         padding: 0px 40px;
-    }   
+    }
+
     nav .SHname {
         font-size: 26px;
         font-weight: 700;
     }
-    nav img{
-        width: 2.8%;
-    }
+
+
     nav ul {
         display: none;
     }
-    .dropdown{
+
+    .dropdown {
         display: inline-block;
+    }
+    nav .img {
+
+        box-shadow: 1px 1px 3px 2px var(--themecolor);
+        width: 20px;
+    }
+    nav .img:hover {
+        transform: scale(110%);
+        box-shadow: 2px 2px 3px 2px var(--themecolor);
+        width: 20px;
     }
 
 }
@@ -155,7 +197,7 @@ cursor: pointer;
 
 /* Section 2 Container  */
 
-.container{
+.container {
     height: 100vh;
     width: 100%;
     /* background-color: rgb(242, 231, 216); */
@@ -165,21 +207,29 @@ cursor: pointer;
     align-items: center;
     row-gap: 30px;
 }
-.container .mainH{
-   margin-top: 15vh;
-   text-transform: capitalize;
-   font-size: 28px;
-   font-weight: 600;
-   text-decoration: underline var(--themecolor) 4px;
-   letter-spacing: 1px;
-   text-align: center;
+
+.container .mainH {
+    margin-top: 15vh;
+    text-transform: capitalize;
+    font-size: 28px;
+    font-weight: 600;
+    text-decoration: underline var(--themecolor) 4px;
+    letter-spacing: 1px;
+    text-align: center;
 }
+
+
+
+
+
+
+
 
 
 /*  Intro Container */
 
-.introContainer{
-    border: 5px solid  var(--sideTheme);
+.introContainer {
+    border: 5px solid var(--sideTheme);
     padding: 5px;
     position: relative;
     display: flex;
@@ -187,21 +237,26 @@ cursor: pointer;
     align-items: center;
     overflow: hidden;
 }
-.introContainer::before{
+
+.introContainer::before {
     content: "";
-    background-color:var(--themecolor);
+    background-color: var(--themecolor);
     height: 200vh;
     width: 100vw;
     position: absolute;
-    background: conic-gradient(transparent 0deg 90deg,var(--themecolor) ,transparent 180deg 270deg,var(--themecolor) );
+    background: conic-gradient(transparent 0deg 90deg, var(--themecolor), transparent 180deg 270deg, var(--themecolor));
     animation: borderMover 12s linear infinite;
 }
-@keyframes borderMover{
-    100%{
+
+@keyframes borderMover {
+    100% {
         transform: rotate(360deg);
     }
 }
-.introContainer .intro{
+
+
+
+.introContainer .intro {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -210,56 +265,135 @@ cursor: pointer;
     padding: 10px;
     background-color: var(--sideTheme);
     position: relative;
-    }
+}
 
-.imgContainer{
+
+.imgContainer {
     height: 170px;
     width: 170px;
     border: 2px solid;
     border-radius: 50%;
     overflow: hidden;
- display: flex;
+    display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     background-color: white;
-  
+
 }
 
-.introContainer .imgContainer img{
+
+.introContainer .imgContainer img {
     width: 100%;
 }
-.introContainer .name{
+
+.introContainer .name {
     text-transform: capitalize;
     font-size: 23px;
     font-weight: 600;
     letter-spacing: 0.7px;
 }
-.introContainer .field{
+
+.introContainer .field {
     text-transform: capitalize;
     font-family: "Baloo Tamma 2", system-ui;
     font-size: 20px;
     font-weight: 600;
 
 }
-.introContainer  .info{
+
+.introContainer .info {
     font-size: 16px;
     text-align: center;
 }
-.nextImgContainer{
+
+.nextImgContainer {
     margin-top: 10px;
     display: flex;
     column-gap: 20px;
 }
-.nextImgContainer img{
+
+.nextImgContainer img {
     border-radius: 50%;
     width: 25px;
     box-shadow: 1px 1px 2px 0.8px var(--themecolor);
 }
-.nextImgContainer img:hover{
-    box-shadow: 1px 1px 2px 2px var(--themecolor);
-     transform: scale(110%);
+
+.nextImgContainer img:hover {
+    transform: scale(110%);
     cursor: pointer;
 }
 
+.nextImgContainer img:active {
+    box-shadow: 1px 1px 2px 2px var(--themecolor);
+}
+
+@media only screen and (max-width:430px) and (max-height:1000px) {
+    .container .mainH {
+        margin-top: 12vh;
+        font-size: 22px;
+        font-weight: 600;
+        width: 70%;
+    }
+    .introContainer .intro {
+        width: 65vw;
+        row-gap: 5px;
+    }
+    .introContainer::before { 
+        height: 200vh;
+        width: 120vw;
+        background: conic-gradient(transparent 0deg 90deg, var(--themecolor), transparent 180deg 270deg, var(--themecolor));
+        animation: borderMover 10s linear infinite;
+    }
+    .introContainer .info {
+        font-size: 14px;
+        text-align: left;
+        margin-left: 20px;
+    }
 
 
+}
+@media only screen and (max-width:430px) and (max-height:800px) {
+    .container .mainH {
+        margin-top: 12vh;
+        font-size: 19px;
+        font-weight: 600;
+        width: 80%;
+    }
+    .introContainer .intro {
+        width: 75vw;
+        /* height: 70vh; */
+        row-gap: 2px;
+        padding: 6px;
+    }
+    .imgContainer {
+        height: 150px;
+        width: 150px;  
+    }
+    .introContainer::before { 
+        height: 200vh;
+        width: 120vw;
+        background: conic-gradient(transparent 0deg 90deg, var(--themecolor), transparent 180deg 270deg, var(--themecolor));
+        animation: borderMover 10s linear infinite;
+    }
+    .introContainer .name {
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0.7px;
+    }
+    
+    .introContainer .field {
+        text-transform: capitalize;
+        font-family: "Baloo Tamma 2", system-ui;
+        font-size: 18px;
+        font-weight: 600;
+    
+    }
+    
+    .introContainer .info {
+        font-size: 12px;
+        text-align: center;
+        text-align: left;
+        margin-left: 10px;
+    }
+}
